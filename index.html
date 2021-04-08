@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  </head>
+
+  <style>
+    /*
+      COLORS:
+      #456279
+      rgba(229, 77, 66)
+      rgb(236, 240, 241)
+    */
+    .jumbotron, .card-header, .modal-header, .modal-footer, .card-footer {
+      background-color: #456279;
+      color: rgb(236, 240, 241);
+
+    }
+
+    .thead {
+      background-color: rgba(229, 77, 66);
+      color: rgb(236, 240, 241);
+      border-left: 1px solid rgb(236, 240, 241);
+    }
+
+    tr {
+      background-color: #456279;
+      color: rgb(236, 240, 241);
+    }
+    
+    td {
+      border-left: 1px solid rgb(236, 240, 241);
+    }
+
+    body, .btn-custom, .card-body-1, .modal-body {
+      background-color: rgb(236, 240, 241);
+    }
+  </style>
+  <body>
+
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Project Tracker</h1>
+      <hr class="my-4">
+      <h3>Current Time & Date:</h3>
+      <p id="time"></p>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Instructions</h5>
+          </div>
+          <div class="card-body-1 p-3">
+            <p class="card-text">Click the "Add Project" button below to open a form and provide information for the following.</p>
+          </div>
+          <div class="card-body-2">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Project Name</li>
+              <li class="list-group-item">Project Type</li>
+              <li class="list-group-item">Due Date</li>
+              <li class="list-group-item">Hourly Rate</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-card btn-custom btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add Project</button>
+          </div>
+        </div>
+      </div>
+    
+      <div 
+        class="modal fade" 
+        id="exampleModal" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add a new project.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+              <form>
+                <div class="form-group">
+                  <label for="project-name" class="col-form-label">Project Name</label>
+                  <input type="text" class="form-control" id="project-name" placeholder="Enter the project's name">
+                </div>
+                <div class="form-group">
+                  <label for="multi-select" class="col-form-label">Project Type</label>
+                  <select class="form-control" id="multi-select">
+                    <option>Front end</option>
+                    <option>Back end</option>
+                    <option>Full stack</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="hourly-wage" class="col-form-label">Hourly Rate ($)</label>
+                  <input type="number" class="form-control" id="hourly-wage" placeholder="$">
+                </div>
+                <div class="form-group">
+                  <p>Due Date<input type="text" id="datepicker" class="form-control" placeholder="When is the project due?"></p>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="form-submit" type="submit" class="btn btn-custom"  data-dismiss="modal">Submit Project Info</button>
+              </div>
+
+            </form>
+
+          </div>
+
+          </div>
+        </div>  
+      
+    <div class="col-md-8">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="thead">Project Name</th>
+            <th scope="col" class="thead">Project Type</th>
+            <th scope="col" class="thead">Hourly Rate ($)</th>
+            <th scope="col" class="thead">Due Date</th>
+            <th scope="col" class="thead">Days Until Due Date</th>
+            <th scope="col" class="thead">Potential Total Earnings ($)</th>
+            <th scope="col" class="thead">  </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
