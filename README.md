@@ -6,13 +6,13 @@ A small sample application to highlight the ability to use styling libraries and
 
 ## Screenshots
 
-[Screenshot 1](/assets/images/screenshot1.png)
+![Screenshot 1](/assets/images/screenshot1.png)
 
-[Screenshot 2](/assets/images/screenshot2.png)
+![Screenshot 2](/assets/images/screenshot2.png)
 
 ## Demo
 
-[Gif](/assets/images/project-tracker.gif)
+![Gif](/assets/images/project-tracker.gif)
 
 ## Deployment
 
