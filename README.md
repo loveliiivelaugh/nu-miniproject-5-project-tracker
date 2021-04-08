@@ -16,7 +16,7 @@ A small sample application to highlight the ability to use styling libraries and
 
 ## Deployment
 
-* Deployed with [GitHub Pages]()
+* Deployed with [GitHub Pages](https://pages.github.com/)
 
 [Live Site](https://loveliiivelaugh.github.io/nu-miniproject-5-project-tracker/)
 
